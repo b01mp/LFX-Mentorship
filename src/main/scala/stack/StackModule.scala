@@ -42,7 +42,7 @@ class StackModule(val dataWidth: Int, val len: Int) extends Module {
   
   // Data handling
   val pushData = Wire(UInt(dataWidth.W))
-  if (dataWidth >= 25) {
+  if (dataWidth >= 25){
     pushData := Cat(0.U((dataWidth-25).W), data)
   } else {
     pushData := data(dataWidth-1, 0)
